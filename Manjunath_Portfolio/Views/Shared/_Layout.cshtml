@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @Styles.Render("~/bundles/bootstrapstyles")
+    @*@Styles.Render("~/bundles/customcss")*@
+    @Styles.Render("~/bundles/fontawesome")
+
+    @Scripts.Render("~/bundles/bootstrapjs")
+    @Scripts.Render("~/bundles/jquery")
+
+    @*<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nova+Square" />*@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+
+    <style>
+        /* main - #FECD45
+           side - #2568FB
+        */
+        * {
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .brandimage {
+            width: 100px;
+            border: 3px solid black;
+        }
+
+        body {
+            background-color: #FECD45;
+        }
+
+        /* style on elements */
+        h1 {
+            font-size: 60px;
+        }
+
+        input:focus {
+            border: 2px solid #2568FB;
+            box-shadow: none;
+        }
+
+        /* navigatio css*/
+        .navbar {
+            background-color: #FECD45;
+            border-bottom: 3px solid black;
+        }
+
+        .navbar-nav li a {
+            border: 3px solid black;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+            .navbar-nav li a:hover {
+                color: white !important;
+                background-color: #2568FB;
+            }
+
+        /* home page */
+
+        #profileimage {
+            width: 300px;
+            height: 300px;
+            border: 3px solid blue;
+            border-radius: 50%;
+            transition: all 0.4s;
+        }
+
+            #profileimage:hover {
+                width: 350px;
+                height: 350px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            }
+
+        /* about page*/
+        #about {
+            scroll-margin-top: 180px;
+        }
+
+        #Exp {
+            scroll-margin-top: 140px;
+        }
+        /* contact page */
+        /* common css */
+        .p-lr {
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .text-blue {
+            color: #2568FB
+        }
+
+        .text-darkgrey {
+            color: #A9A9A9;
+        }
+
+        /* media screens */
+        @@media screen and (min-width: 768px) {
+            #home {
+                height: 100vh;
+            }
+        }
+
+        /*test*/
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand ps-lg-5" href="#"><img src="~/Images/WIN_20231216_12_17_19_Pro.jpg" class="rounded-pill brandimage"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span><i class="fa fa-bars"></i></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <div class="w-100 d-lg-flex justify-content-end pe-lg-5">
+                        <ul class="navbar-nav  gap-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#home" id="home-atag">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#about" id="about-atag">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#Exp">Techs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        <div id="mainbody">
+            @RenderBody()
+        </div>
+    </div>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
